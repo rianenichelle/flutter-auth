@@ -12,7 +12,7 @@ class SettingsScreen extends StatefulWidget {
 }
 
 class SettingsScreenState extends State<SettingsScreen> {
-  AuthService authService = AuthService();
+  AuthService _authService = AuthService();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -21,7 +21,7 @@ class SettingsScreenState extends State<SettingsScreen> {
         child: SingleChildScrollView(
           child: ElevatedButton(
             onPressed: () async {
-              await authService.logout();
+              await _authService.logout();
               LocalStorageService.setName("");
               LocalStorageService.setUid("");
               Get.offAllNamed(LoginScreen.routeName);

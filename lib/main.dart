@@ -23,7 +23,7 @@ Future main() async {
       ),
     ),
     getPages: routes,
-    initialRoute: LocalStorageService.isUserLoggedIn() 
+    initialRoute: LocalStorageService.isUserLoggedIn()
       ? DashboardScreen.routeName
       : LoginScreen.routeName,
   ));

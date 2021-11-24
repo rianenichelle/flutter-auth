@@ -6,7 +6,6 @@ import 'package:basecode/widgets/CustomTextFormField.dart';
 import 'package:basecode/widgets/PasswordField.dart';
 import 'package:basecode/widgets/PrimaryButton.dart';
 import 'package:basecode/widgets/SecondaryButton.dart';
-// import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:get/get.dart';
@@ -117,14 +116,9 @@ class RegistrationScreenState extends State<RegistrationScreen> {
                       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                       children: [
                         SecondaryButton(
-                            text: "Already have an account? Login",
+                            text: "Already have an account? Log in.",
                             onPress: () {
                               Get.offNamed(LoginScreen.routeName);
-                            }),
-                        SecondaryButton(
-                            text: "Forgot Password?",
-                            onPress: () {
-                              Get.toNamed(ForgotPasswordScreen.routeName);
                             }),
                       ],
                     ),

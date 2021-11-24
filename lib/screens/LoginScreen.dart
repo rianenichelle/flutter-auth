@@ -126,7 +126,7 @@ class LoginScreenState extends State<LoginScreen> {
 
       LocalStorageService.setName(user.user.displayName);
       LocalStorageService.setUid(user.user.uid);
-      LocalStorageService.setRefreshToken(user.user.refreshToken);
+      // LocalStorageService.setRefreshToken(user.user.refreshToken);
 
       Get.offNamed(DashboardScreen.routeName);
     } catch (e) {
@@ -138,7 +138,7 @@ class LoginScreenState extends State<LoginScreen> {
     });
   }
 
-  logInWithEmailAndPassword() async {
+  loginWithEmailAndPassword() async {
     try{
       setState(() {
           isLoggingIn = true;
@@ -147,6 +147,7 @@ class LoginScreenState extends State<LoginScreen> {
       var user = await _authService.signInWithEmailAndPassword(
         _emailController.value.text,
         _passwordController.value.text);
+
       if (user == null) {
           print("Invalid user credentials.");
           return;

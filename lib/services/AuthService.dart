@@ -13,9 +13,7 @@ class AuthService {
         await googleUser?.authentication;
 
     final OAuthCredential credential = GoogleAuthProvider.credential(
-        accessToken: googleAuth?.accessToken, 
-        idToken: googleAuth?.idToken
-    );
+        accessToken: googleAuth?.accessToken, idToken: googleAuth?.idToken);
 
     return await FirebaseAuth.instance.signInWithCredential(credential);
   }
@@ -31,11 +29,9 @@ class AuthService {
   }
 
   Future<UserCredential> createUser(String email, String password) async =>
-      await FirebaseAuth.instance
-          .signInWithEmailAndPassword(email: email, password: password);
+    await FirebaseAuth.instance.signInWithEmailAndPassword(email: email, password: password);
 
-  Future<UserCredential> signInWithEmailAndPassword(
-          String email, String password) async =>
+  Future<UserCredential> signInWithEmailAndPassword(String email, String password) async =>
       await FirebaseAuth.instance
           .signInWithEmailAndPassword(email: email, password: password);
 }

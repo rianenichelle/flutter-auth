@@ -7,7 +7,7 @@ class LocalStorageService {
   static const String _refreshTokenKey = "refreshToken";
 
   static Future initialize() async =>
-      _preferences = await SharedPreferences.getInstance();
+    _preferences = await SharedPreferences.getInstance();
 
   static Future setName(String username) async =>
       await _preferences.setString(_usernameKey, username);
